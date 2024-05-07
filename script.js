@@ -20,5 +20,8 @@ let winner = 0
 let death = 0
 let black = true
 let playAgain = 1
+const button = body.querySelector('#darkMode')
+const ul = body.querySelector('ul')
+let isWin = false //boolean to check if the player win and by defualt its false
 /* functions */
 /* eventLisnter */
