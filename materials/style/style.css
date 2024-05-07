@@ -5,3 +5,60 @@ body {
   font-family: Jaro;
   font-weight: bold;
 }
+p {
+  margin-left: 5rem;
+}
+#darkMode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.9rem;
+  padding: 0.6rem;
+  background-color: black;
+  color: whitesmoke;
+  opacity: 1;
+  cursor: pointer;
+  font-family: monospace;
+  transition-duration: 1.25s;
+  font-weight: bold;
+  height: 40px;
+}
+#darkMode:hover {
+  opacity: 3;
+  background-color: green;
+}
+.game {
+  width: 60%;
+  height: 100%;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+  border: 0.2rem black solid;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+  font-family: monospace;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  height: 50%;
+  gap: 0;
+  border-top: 1rem green solid;
+  gap: 0;
+}
+img {
+  width: 30px;
+  height: 30px;
+}
+.cell {
+  width: 19.8%;
+  height: 10vh;
+  margin: 0;
+  text-align: center;
+}
