@@ -14,5 +14,7 @@ const arrowDown = 'ArrowDown'
 const arrowRight = 'ArrowRight'
 const arrowLeft = 'ArrowLeft'
 let winningScore = body.querySelector('#additions').querySelector('#win')
+let xMovement = 1 //left and right movement
+let yMovement = 1 //up and down movement
 /* functions */
 /* eventLisnter */
