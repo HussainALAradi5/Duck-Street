@@ -92,3 +92,6 @@ const duckMovement = (direction) => {
     '<img src="./materials/images/Duck.jpg" alt="Duck" />'
 } //this function will track the movement of the duck by the keyvored
 /* eventLisnter */
+document.addEventListener('keydown', (direction) => {
+  duckMovement(direction.key)
+})
