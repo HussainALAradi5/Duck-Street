@@ -62,3 +62,19 @@ img {
   margin: 0;
   text-align: center;
 }
+
+#ocean {
+  width: 100%;
+  margin-bottom: 0.6rem;
+  background-color: navy;
+  padding: 2rem 0.1rem;
+  text-align: center;
+  border-top: none;
+}
+ul {
+  list-style-type: none;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2rem;
+}
