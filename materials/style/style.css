@@ -78,3 +78,7 @@ ul {
   justify-content: space-between;
   padding-right: 2rem;
 }
+#win,
+#death {
+  font-size: 2rem;
+}
