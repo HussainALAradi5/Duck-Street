@@ -4,6 +4,7 @@ body {
   flex-wrap: wrap;
   font-family: Jaro;
   font-weight: bold;
+  overflow: hidden; /*to hide the scroll*/
 }
 p {
   margin-left: 5rem;

@@ -8,6 +8,11 @@ const secondRow = body.querySelector('#secondRow')
 const thirdRow = body.querySelector('#thirdRow')
 const fourthRow = body.querySelector('#fourthRow')
 const fifthRow = body.querySelector('#fifthRow')
+const level1 = game.querySelector('#level1')
+const level2 = game.querySelector('#level2')
+const level3 = game.querySelector('#level3')
+const button = body.querySelector('#darkMode')
+const ul = body.querySelector('ul')
 let currentLocation = firstRow.querySelector('#r1C1')
 const arrowUp = 'ArrowUp'
 const arrowDown = 'ArrowDown'
@@ -20,15 +25,13 @@ let winner = 0
 let death = 0
 let black = true
 let playAgain = 1
-const button = body.querySelector('#darkMode')
-const ul = body.querySelector('ul')
+
 let isWin = false //boolean to check if the player win and by defualt its false
-const level1 = game.querySelector('#level1')
-const level2 = game.querySelector('#level2')
-const level3 = game.querySelector('#level3')
+
 const car = {
   color: ['red', 'green', 'purple', 'blue'],
-  imgSource: './materials/name.png'
+  imgSource: './materials/name.png',
+  Cars: []
 }
 /* functions */
 const generateRandomCars = () => {
@@ -37,21 +40,7 @@ const generateRandomCars = () => {
   console.log(carImage)
   return carImage
 }
-const leftCars = (rowNumber) => {
-  if (rowNumber <= 1) rowNumber = 2
-  let carXMovement = 1
-  let carLocation = secondRow.querySelector(`#r${rowNumber}c1`)
-  let currentCarLocation = carXMovement++
-  carLocation = secondRow.querySelector(`#r${rowNumber}c${currentCarLocation}`)
-  if (currentCarLocation === 5) currentCarLocation = 1
-  carLocation.innerHTML = `<img src="${generateRandomCars()}" alt="color" />`
-  console.log(currentCarLocation)
-  return true
-}
-const rightCars = () => {}
-const carMovementSpeed = (rowNumber) => {
-  return setInterval(leftCars(rowNumber), 5000)
-}
+
 const winnerScope = (isWin) => {
   if (isWin) winner++
   yMovement = 1
@@ -75,14 +64,61 @@ const dark = () => {
     button.style.backgroundColor = 'black'
     button.style.color = 'white'
   }
-} //dark  mode
+}
+const deaths = () => {
+  currentLocation.innerHTML = ''
+  currentLocation = game.querySelector('#r1C1')
+  currentLocation.innerHTML =
+    '<img src="./materials/images/Duck.jpg" alt="Duck" />'
+  car.Cars.forEach((a) => a.remove())
+  car.Cars = []
+  document.querySelector('#death').innerText = death
+  xMovement = 1
+  yMovement = 1
+}
+const isDead = () => {
+  if (currentLocation.childElementCount === 2) {
+    death++
+    console.log(death)
+    return true
+  }
+  return false
+}
+const playLevel1 = () => {
+  for (let i = 2; i < 7; i++) {
+    let img = document.createElement('img')
+    img.src = generateRandomCars()
+    let theCar = game.querySelector(`#r${i}C8 `).appendChild(img)
+    car.Cars.push(theCar)
+  }
+
+  const carM = setInterval(() => {
+    for (let i = 0; i < car.Cars.length; i++) {
+      let indx = car.Cars[i].parentNode.id[1]
+      let indx2 = car.Cars[i].parentNode.id[3]
+      if (indx2 == 1) indx2 = 8
+      let img = car.Cars[i]
+      car.Cars[i].remove()
+      let theCar = game.querySelector(`#r${indx}C${--indx2} `).appendChild(img)
+      car.Cars[i] = theCar
+    }
+    if (isDead()) {
+      deaths()
+      clearInterval(carM)
+    }
+  }, 1500)
+}
+
+const playLeve2 = () => {}
+const playLevel3 = () => {}
+//dark  mode
 const duckMovement = (direction) => {
   let up = direction === arrowUp || direction === 'w' || direction === 'W'
   let right = direction === arrowRight || direction === 'd' || direction === 'D'
   let down = direction === arrowDown || direction === 's' || direction === 'S'
   let left = direction === arrowLeft || direction === 'a' || direction === 'A'
-  console.log(`key ==> ${direction}`)
-  if (up) {
+  /*   console.log(`key ==> ${direction}`)
+   */ if (up) {
     if (yMovement === 7) return
 
     yMovement++
@@ -106,7 +142,8 @@ const duckMovement = (direction) => {
     winnerScope(isWin)
   } else {
     currentLocation = game.querySelector(` #r${yMovement}C${xMovement}`)
-    console.log(currentLocation)
+    /*     console.log(currentLocation)
+     */
   }
   currentLocation.innerHTML =
     '<img src="./materials/images/Duck.jpg" alt="Duck" />'
@@ -120,3 +157,6 @@ document.addEventListener('keydown', (direction) => {
 button.addEventListener('click', () => {
   dark()
 }) //event listner to handle dark mode
+level1.addEventListener('click', () => {
+  playLevel1()
+})
