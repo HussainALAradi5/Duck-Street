@@ -29,4 +29,17 @@ const car = {
   imgSource: './materials/name.png'
 }
 /* functions */
+const generateRandomCars = () => {
+  let random = Math.floor(Math.random() * car.color.length) % car.color.length
+  return random
+}
+const winnerScope = (isWin) => {
+  if (isWin) winner++
+  yMovement = 1
+  xMovement = 1
+  currentLocation = game.querySelector(` #r${yMovement}C${xMovement}`)
+  console.log(currentLocation)
+  winningScore.innerHTML = `${winner}`
+  return true
+}
 /* eventLisnter */
