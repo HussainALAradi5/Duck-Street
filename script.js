@@ -31,17 +31,24 @@ const car = {
 /* functions */
 const generateRandomCars = () => {
   let random = Math.floor(Math.random() * car.color.length) % car.color.length
-  let carImage = (car.imgSource = `./materials/${random}.png`)
+  let carImage = (car.imgSource = `./materials/images/${car.color[random]}.png`)
+  console.log(carImage)
   return carImage
 }
 const leftCars = (rowNumber) => {
   if (rowNumber <= 1) rowNumber = 2
   let carXMovement = 1
   let carLocation = secondRow.querySelector(`#r${rowNumber}c1`)
-  let currentCarLocation = rowNumber++
-  carLocation = secondRow.querySelector(`#r${rowNumber}c1`)
+  let currentCarLocation = carXMovement++
+  carLocation = secondRow.querySelector(`#r${rowNumber}c${currentCarLocation}`)
+  if (currentCarLocation === 5) return
+  console.log(currentCarLocation)
+  return generateRandomCars()
 }
 const rightCars = () => {}
+const carMovementSpeed = (rowNumber) => {
+  return setInterval(leftCars(rowNumber), 5000)
+}
 const winnerScope = (isWin) => {
   if (isWin) winner++
   yMovement = 1
@@ -102,6 +109,7 @@ const duckMovement = (direction) => {
 } //this function will track the movement of the duck by the keyvored
 /* eventLisnter */
 document.addEventListener('keydown', (direction) => {
+  carMovementSpeed(2)
   duckMovement(direction.key)
 })
 
