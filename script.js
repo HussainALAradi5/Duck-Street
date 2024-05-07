@@ -33,6 +33,7 @@ const car = {
   imgSource: './materials/name.png',
   Cars: []
 }
+let carM
 /* functions */
 const generateRandomCars = () => {
   let random = Math.floor(Math.random() * car.color.length) % car.color.length
@@ -75,9 +76,10 @@ const deaths = () => {
   document.querySelector('#death').innerText = death
   xMovement = 1
   yMovement = 1
+  playLevel1()
 }
-const isDead = () => {
-  if (currentLocation.childElementCount === 2) {
+const isDead = (count) => {
+  if (currentLocation.childElementCount === count) {
     death++
     console.log(death)
     return true
@@ -92,17 +94,17 @@ const playLevel1 = () => {
     car.Cars.push(theCar)
   }
 
-  const carM = setInterval(() => {
+  carM = setInterval(() => {
     for (let i = 0; i < car.Cars.length; i++) {
       let indx = car.Cars[i].parentNode.id[1]
       let indx2 = car.Cars[i].parentNode.id[3]
-      if (indx2 == 1) indx2 = 8
+      if (indx2 == 1) indx2 = 9
       let img = car.Cars[i]
       car.Cars[i].remove()
       let theCar = game.querySelector(`#r${indx}C${--indx2} `).appendChild(img)
       car.Cars[i] = theCar
     }
-    if (isDead()) {
+    if (isDead(2)) {
       deaths()
       clearInterval(carM)
     }
@@ -144,6 +146,10 @@ const duckMovement = (direction) => {
     currentLocation = game.querySelector(` #r${yMovement}C${xMovement}`)
     /*     console.log(currentLocation)
      */
+  }
+  if (isDead(1)) {
+    clearInterval(carM)
+    deaths()
   }
   currentLocation.innerHTML =
     '<img src="./materials/images/Duck.jpg" alt="Duck" />'
