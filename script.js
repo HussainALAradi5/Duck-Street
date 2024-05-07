@@ -31,8 +31,17 @@ const car = {
 /* functions */
 const generateRandomCars = () => {
   let random = Math.floor(Math.random() * car.color.length) % car.color.length
-  return random
+  let carImage = (car.imgSource = `./materials/${random}.png`)
+  return carImage
 }
+const leftCars = (rowNumber) => {
+  if (rowNumber <= 1) rowNumber = 2
+  let carXMovement = 1
+  let carLocation = secondRow.querySelector(`#r${rowNumber}c1`)
+  let currentCarLocation = rowNumber++
+  carLocation = secondRow.querySelector(`#r${rowNumber}c1`)
+}
+const rightCars = () => {}
 const winnerScope = (isWin) => {
   if (isWin) winner++
   yMovement = 1
