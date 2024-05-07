@@ -83,7 +83,7 @@ const duckMovement = (direction) => {
   let left = direction === arrowLeft || direction === 'a' || direction === 'A'
   console.log(`key ==> ${direction}`)
   if (up) {
-    if (yMovement === 6) return
+    if (yMovement === 7) return
 
     yMovement++
   } else if (right) {
@@ -100,7 +100,7 @@ const duckMovement = (direction) => {
   } else return
 
   currentLocation.innerHTML = ''
-  if (yMovement === 6) {
+  if (yMovement === 7) {
     isWin = true
     currentLocation = ocean.querySelector(` #r${yMovement}C${xMovement}`)
     winnerScope(isWin)
