@@ -13,5 +13,6 @@ const arrowUp = 'ArrowUp'
 const arrowDown = 'ArrowDown'
 const arrowRight = 'ArrowRight'
 const arrowLeft = 'ArrowLeft'
+let winningScore = body.querySelector('#additions').querySelector('#win')
 /* functions */
 /* eventLisnter */
