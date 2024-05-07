@@ -95,3 +95,7 @@ const duckMovement = (direction) => {
 document.addEventListener('keydown', (direction) => {
   duckMovement(direction.key)
 })
+
+button.addEventListener('click', () => {
+  dark()
+}) //event listner to handle dark mode
