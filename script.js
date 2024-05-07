@@ -41,9 +41,10 @@ const leftCars = (rowNumber) => {
   let carLocation = secondRow.querySelector(`#r${rowNumber}c1`)
   let currentCarLocation = carXMovement++
   carLocation = secondRow.querySelector(`#r${rowNumber}c${currentCarLocation}`)
-  if (currentCarLocation === 5) return
+  if (currentCarLocation === 5) currentCarLocation = 1
+  carLocation.innerHTML = `<img src="${generateRandomCars()}" alt="color" />`
   console.log(currentCarLocation)
-  return generateRandomCars()
+  return true
 }
 const rightCars = () => {}
 const carMovementSpeed = (rowNumber) => {
@@ -103,13 +104,14 @@ const duckMovement = (direction) => {
     winnerScope(isWin)
   } else {
     currentLocation = game.querySelector(` #r${yMovement}C${xMovement}`)
+    console.log(currentLocation)
   }
   currentLocation.innerHTML =
     '<img src="./materials/images/Duck.jpg" alt="Duck" />'
 } //this function will track the movement of the duck by the keyvored
 /* eventLisnter */
+
 document.addEventListener('keydown', (direction) => {
-  carMovementSpeed(2)
   duckMovement(direction.key)
 })
 
