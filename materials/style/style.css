@@ -1,0 +1,7 @@
+body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: Jaro;
+  font-weight: bold;
+}
