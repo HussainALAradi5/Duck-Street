@@ -23,5 +23,10 @@ let playAgain = 1
 const button = body.querySelector('#darkMode')
 const ul = body.querySelector('ul')
 let isWin = false //boolean to check if the player win and by defualt its false
+
+const car = {
+  color: ['red', 'green', 'purple', 'blue'],
+  imgSource: './materials/name.png'
+}
 /* functions */
 /* eventLisnter */
