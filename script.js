@@ -87,7 +87,7 @@ const duckMovement = (direction) => {
 
     yMovement++
   } else if (right) {
-    if (xMovement === 5) return
+    if (xMovement === 8) return
 
     xMovement++
   } else if (down) {
