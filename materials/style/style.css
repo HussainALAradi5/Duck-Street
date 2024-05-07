@@ -8,10 +8,16 @@ body {
 p {
   margin-left: 5rem;
 }
-#darkMode {
+.buttons {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+#darkMode,
+#level1,
+#level2,
+#level3 {
   border-radius: 0.9rem;
   padding: 0.6rem;
   background-color: black;
@@ -23,9 +29,22 @@ p {
   font-weight: bold;
   height: 40px;
 }
+
 #darkMode:hover {
   opacity: 3;
   background-color: green;
+}
+#level1:hover {
+  opacity: 3;
+  background-color: blue;
+}
+#level2:hover {
+  opacity: 3;
+  background-color: purple;
+}
+#level3:hover {
+  opacity: 3;
+  background-color: red;
 }
 .game {
   width: 60%;
