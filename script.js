@@ -42,4 +42,53 @@ const winnerScope = (isWin) => {
   winningScore.innerHTML = `${winner}`
   return true
 }
+const dark = () => {
+  if (black) {
+    body.style.backgroundColor = 'black'
+    black = false
+    ul.style.color = 'whiteSmoke'
+    button.style.backgroundColor = 'white'
+    button.style.color = 'black'
+  } else {
+    body.style.backgroundColor = 'white'
+    black = true
+    ul.style.color = 'black'
+    button.style.backgroundColor = 'black'
+    button.style.color = 'white'
+  }
+} //dark  mode
+const duckMovement = (direction) => {
+  let up = direction === arrowUp || direction === 'w' || direction === 'W'
+  let right = direction === arrowRight || direction === 'd' || direction === 'D'
+  let down = direction === arrowDown || direction === 's' || direction === 'S'
+  let left = direction === arrowLeft || direction === 'a' || direction === 'A'
+  console.log(`key ==> ${direction}`)
+  if (up) {
+    if (yMovement === 6) return
+
+    yMovement++
+  } else if (right) {
+    if (xMovement === 5) return
+
+    xMovement++
+  } else if (down) {
+    if (yMovement === 1) return
+
+    yMovement--
+  } else if (left) {
+    if (xMovement === 1) return
+    xMovement--
+  } else return
+
+  currentLocation.innerHTML = ''
+  if (yMovement === 6) {
+    isWin = true
+    currentLocation = ocean.querySelector(` #r${yMovement}C${xMovement}`)
+    winnerScope(isWin)
+  } else {
+    currentLocation = game.querySelector(` #r${yMovement}C${xMovement}`)
+  }
+  currentLocation.innerHTML =
+    '<img src="./materials/images/Duck.jpg" alt="Duck" />'
+} //this function will track the movement of the duck by the keyvored
 /* eventLisnter */
