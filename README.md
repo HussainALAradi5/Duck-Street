@@ -46,10 +46,10 @@
 
 ### **_Future Updates_**
 
-- [ ] Future Update 1
+- [ ] add random cars color
 - [ ] Future Update 2
-- [x] Completed Update
-- [x] ~~Strikethrough~~ Items Also
+- [x] duck movement
+- [x] winning score
 
 ---
 
