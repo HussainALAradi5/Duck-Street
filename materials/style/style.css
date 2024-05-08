@@ -5,6 +5,8 @@ body {
   font-family: Jaro;
   font-weight: bold;
   overflow: hidden; /*to hide the scroll*/
+  background-image: url('../images/cartoon-funny-mother-duck-baby-duck-floats-water-illustration-65334243.png');
+  background-size: auto;
 }
 p {
   margin-left: 5rem;
