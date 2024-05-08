@@ -32,13 +32,13 @@
 
 ##### image header 1
 
-![Smile](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.PDlm3trgAkY6pGPcbRt4SQHaEK%26pid%3DApi&f=1)
+![intro](./materials/images/Gameplay/01.png)
 
 ##### image header 2
 
-![Scared](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.buntINTHFLyDODyMKXNYcgHaEK%26pid%3DApi&f=1)
+## ![videos:](./materials/images/Gameplay/01.mp4)
 
----
+## ![videos:](./materials/images/Gameplay/02.mp4)
 
 ### **_Future Updates_**
 
