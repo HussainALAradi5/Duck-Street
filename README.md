@@ -52,7 +52,7 @@
 
 ### **_Credits_**
 
-##### my colluge(Jasim Khalef,abdulla hisham,yusif zaman and other friends ) who help me in the CSS part
+##### my instructors and my colluge(Jasim Khalef,abdulla hisham,yusif zaman and other friends ) who help me in the CSS part
 
 ##### inspired by:the frogger video game
 
