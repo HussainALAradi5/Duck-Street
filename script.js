@@ -30,7 +30,7 @@ const duck = body.querySelector('#duck')
 let isWin = false //boolean to check if the player win and by defualt its false
 
 const car = {
-  color: ['red', 'green', 'purple', 'blue', 'yellow'],
+  color: ['red', 'green', 'purple', 'blue'],
   imgSource: './materials/name.png',
   Cars: []
 }
