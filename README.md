@@ -52,10 +52,10 @@
 
 ### **_Credits_**
 
-##### Jasim Khalef my colluge and some other friends
+##### my colluge(Jasim Khalef,abdulla hisham,yusif zaman and other friends ) who help me in the CSS part
 
-##### Markdown Guide: [ia.net](https://ia.net/writer/support/general/markdown-guide)
+##### inspired by:the frogger video game
 
-##### Markdown Cheatsheet: [GitHub](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+##### google for photos
 
 ---
