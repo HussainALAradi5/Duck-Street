@@ -25,7 +25,7 @@ let winner = 0
 let death = 0
 let black = true
 let playAgain = 1
-let isPlayed = false
+let isPlayed = true
 
 let isWin = false //boolean to check if the player win and by defualt its false
 
@@ -158,11 +158,16 @@ const duckMovement = (direction) => {
 
 document.addEventListener('keydown', (direction) => {
   duckMovement(direction.key)
+  isPlayed = true
 })
 
 button.addEventListener('click', () => {
   dark()
 }) //event listner to handle dark mode
+
 level1.addEventListener('click', () => {
-  playLevel1()
+  if (isPlayed) {
+    playLevel1()
+    isPlayed = false
+  }
 })
