@@ -25,6 +25,7 @@ let winner = 0
 let death = 0
 let black = true
 let playAgain = 1
+let isPlayed = false
 
 let isWin = false //boolean to check if the player win and by defualt its false
 
@@ -81,7 +82,6 @@ const deaths = () => {
 const isDead = (count) => {
   if (currentLocation.childElementCount === count) {
     death++
-    console.log(death)
     return true
   }
   return false
@@ -111,7 +111,7 @@ const playLevel1 = () => {
   }, 1500)
 }
 
-const playLeve2 = () => {}
+const playLevel2 = () => {}
 const playLevel3 = () => {}
 //dark  mode
 const duckMovement = (direction) => {
