@@ -171,7 +171,7 @@ const duckMovement = (direction) => {
   let left = direction === arrowLeft || direction === 'a' || direction === 'A'
   /*   console.log(`key ==> ${direction}`)
    */ if (up) {
-    if (yMovement === 7) {
+    if (yMovement === 6) {
       clearInterval(carM)
       winnerScope()
       return
@@ -190,19 +190,17 @@ const duckMovement = (direction) => {
     if (xMovement === 1) return
     xMovement--
   } else return
-
+  console.log(currentLocation)
   currentLocation.innerHTML = ''
-  currentLocation = game.querySelector(` #r${yMovement}C${xMovement}`)
-  currentLocation.innerHTML =
-    '<img id="duck" src="./materials/images/Duck.png" alt="Duck" />'
 
-  /*     console.log(currentLocation)
-   */
+  currentLocation = game.querySelector(` #r${yMovement}C${xMovement}`)
 
   if (isDead(1)) {
     clearInterval(carM)
     clear()
   }
+  currentLocation.innerHTML =
+    '<img id="duck" src="./materials/images/Duck.png" alt="Duck" />'
 }
 const dark = () => {
   if (black) {
@@ -250,3 +248,4 @@ level3.addEventListener('click', () => {
   playerLevel = 3
   clear()
 })
+startGame(1)
