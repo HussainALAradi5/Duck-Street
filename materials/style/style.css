@@ -15,7 +15,10 @@ p {
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-
+#second {
+  background-image: url('../images/ocean.jpg');
+  background-size: cover;
+}
 #darkMode,
 #level1,
 #level2,
