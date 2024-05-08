@@ -71,7 +71,7 @@ const deaths = () => {
   currentLocation.innerHTML = ''
   currentLocation = game.querySelector('#r1C1')
   currentLocation.innerHTML =
-    '<img src="./materials/images/Duck.jpg" alt="Duck" />'
+    '<img src="./materials/images/Duck.png" alt="Duck" />'
   car.Cars.forEach((a) => a.remove())
   car.Cars = []
   document.querySelector('#death').innerText = death
@@ -152,7 +152,7 @@ const duckMovement = (direction) => {
     deaths()
   }
   currentLocation.innerHTML =
-    '<img src="./materials/images/Duck.jpg" alt="Duck" />'
+    '<img src="./materials/images/Duck.png" alt="Duck" />'
 } //this function will track the movement of the duck by the keyvored
 /* eventLisnter */
 
