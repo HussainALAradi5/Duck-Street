@@ -43,17 +43,21 @@ const generateRandomCars = () => {
   return carImage
 }
 
-const winnerScope = (isWin) => {
-  if (isWin) winner++
+const winnerScope = () => {
+  winner++
   yMovement = 1
   xMovement = 1
+  currentLocation.innerHTML = ''
   currentLocation = game.querySelector(` #r${yMovement}C${xMovement}`)
   console.log(currentLocation)
+  currentLocation.innerHTML =
+    '<img id = "duck" src="./materials/images/Duck.png" alt="Duck" />'
   winningScore.innerHTML = `${winner}`
   return true
 }
 
 const clear = () => {
+  clearInterval(carM)
   currentLocation.innerHTML = ''
   currentLocation = game.querySelector('#r1C1')
   currentLocation.innerHTML =
@@ -157,7 +161,7 @@ const playLevel3 = () => {
       clearInterval(carM)
       clear()
     }
-  }, 1500)
+  }, 1250)
 }
 //dark  mode
 const duckMovement = (direction) => {
@@ -167,7 +171,11 @@ const duckMovement = (direction) => {
   let left = direction === arrowLeft || direction === 'a' || direction === 'A'
   /*   console.log(`key ==> ${direction}`)
    */ if (up) {
-    if (yMovement === 7) return
+    if (yMovement === 7) {
+      clearInterval(carM)
+      winnerScope()
+      return
+    }
 
     yMovement++
   } else if (right) {
@@ -184,21 +192,17 @@ const duckMovement = (direction) => {
   } else return
 
   currentLocation.innerHTML = ''
-  if (yMovement === 7) {
-    isWin = true
-    currentLocation = ocean.querySelector(` #r${yMovement}C${xMovement}`)
-    winnerScope(isWin)
-  } else {
-    currentLocation = game.querySelector(` #r${yMovement}C${xMovement}`)
-    /*     console.log(currentLocation)
-     */
-  }
+  currentLocation = game.querySelector(` #r${yMovement}C${xMovement}`)
+  currentLocation.innerHTML =
+    '<img id="duck" src="./materials/images/Duck.png" alt="Duck" />'
+
+  /*     console.log(currentLocation)
+   */
+
   if (isDead(1)) {
     clearInterval(carM)
     clear()
   }
-  currentLocation.innerHTML =
-    '<img id = "duck" src="./materials/images/Duck.png" alt="Duck" />'
 }
 const dark = () => {
   if (black) {
