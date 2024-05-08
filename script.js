@@ -158,7 +158,6 @@ const duckMovement = (direction) => {
 
 document.addEventListener('keydown', (direction) => {
   duckMovement(direction.key)
-  isPlayed = true
 })
 
 button.addEventListener('click', () => {
