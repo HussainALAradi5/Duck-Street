@@ -24,11 +24,7 @@
 
 ### **_Getting Started_**
 
-##### Sign up and sign in as a new user and then begin viewing the different sections of the website.
-
-##### A Trello board was used to keep track of development progress and can be viewed [here](URL).
-
-##### The project was deployed and can be viewed [here](URL).
+##### just play the game and enjoy it
 
 ---
 

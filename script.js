@@ -26,7 +26,7 @@ let death = 0
 let black = true
 let playAgain = 1
 let isPlayed = true
-
+const duck = body.querySelector('#duck')
 let isWin = false //boolean to check if the player win and by defualt its false
 
 const car = {
@@ -59,12 +59,14 @@ const dark = () => {
     ul.style.color = 'whiteSmoke'
     button.style.backgroundColor = 'white'
     button.style.color = 'black'
+    duck.style.boxShadow = '0 0 50px yellow'
   } else {
     body.style.backgroundColor = 'white'
     black = true
     ul.style.color = 'black'
     button.style.backgroundColor = 'black'
     button.style.color = 'white'
+    duck.style.boxShadow = 'none'
   }
 }
 const deaths = () => {
