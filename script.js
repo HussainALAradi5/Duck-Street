@@ -13,6 +13,9 @@ const level2 = game.querySelector('#level2')
 const level3 = game.querySelector('#level3')
 const button = body.querySelector('#darkMode')
 const ul = body.querySelector('ul')
+const secondHTML = game.querySelector('#secondHTML')
+
+console.log(secondHTML)
 let currentLocation = firstRow.querySelector('#r1C1')
 const arrowUp = 'ArrowUp'
 const arrowDown = 'ArrowDown'
@@ -33,13 +36,13 @@ const car = {
   color: ['red', 'green', 'purple', 'blue'],
   imgSource: './materials/name.png',
   Cars: []
-}
+} //car object holds car colors+car image source+an array for Cars
 let carM
+let secondPage = 0
 /* functions */
 const generateRandomCars = () => {
   let random = Math.floor(Math.random() * car.color.length) % car.color.length
   let carImage = (car.imgSource = `./materials/images/${car.color[random]}.png`)
-  console.log(carImage)
   return carImage
 }
 
@@ -49,7 +52,6 @@ const winnerScope = () => {
   xMovement = 1
   currentLocation.innerHTML = ''
   currentLocation = game.querySelector(` #r${yMovement}C${xMovement}`)
-  console.log(currentLocation)
   currentLocation.innerHTML =
     '<img id = "duck" src="./materials/images/Duck.png" alt="Duck" />'
   winningScore.innerHTML = `${winner}`
@@ -169,8 +171,7 @@ const duckMovement = (direction) => {
   let right = direction === arrowRight || direction === 'd' || direction === 'D'
   let down = direction === arrowDown || direction === 's' || direction === 'S'
   let left = direction === arrowLeft || direction === 'a' || direction === 'A'
-  /*   console.log(`key ==> ${direction}`)
-   */ if (up) {
+  if (up) {
     if (yMovement === 6) {
       clearInterval(carM)
       winnerScope()
@@ -190,7 +191,6 @@ const duckMovement = (direction) => {
     if (xMovement === 1) return
     xMovement--
   } else return
-  console.log(currentLocation)
   currentLocation.innerHTML = ''
 
   currentLocation = game.querySelector(` #r${yMovement}C${xMovement}`)
@@ -248,4 +248,8 @@ level3.addEventListener('click', () => {
   playerLevel = 3
   clear()
 })
+secondHTML.addEventListener('click', () => {
+  document.location.href = './second.html'
+})
+
 startGame(1)

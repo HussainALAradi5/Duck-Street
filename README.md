@@ -43,7 +43,7 @@
 ### **_Future Updates_**
 
 - [x] add random cars color
-- [ ] Future Update 2
+- [ ] maybe some random events(bus/bull)
 - [x] duck movement
 - [x] winning score
 - [x] death score

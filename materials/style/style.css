@@ -20,7 +20,8 @@ p {
 #level1,
 #level2,
 #level3,
-#secondHTML {
+#secondHTML,
+#return {
   border-radius: 0.9rem;
   padding: 0.6rem;
   background-color: black;
@@ -31,6 +32,10 @@ p {
   transition-duration: 1.25s;
   font-weight: bold;
   height: 40px;
+}
+#return:hover {
+  opacity: 3;
+  background-color: green;
 }
 #secondHTML:hover {
   opacity: 3;
