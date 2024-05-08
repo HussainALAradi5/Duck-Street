@@ -28,7 +28,7 @@ let playAgain = 1
 let isPlayed = true
 const duck = body.querySelector('#duck')
 let isWin = false //boolean to check if the player win and by defualt its false
-
+let playerLevel = 1
 const car = {
   color: ['red', 'green', 'purple', 'blue'],
   imgSource: './materials/name.png',
@@ -53,7 +53,7 @@ const winnerScope = (isWin) => {
   return true
 }
 
-const deaths = () => {
+const clear = () => {
   currentLocation.innerHTML = ''
   currentLocation = game.querySelector('#r1C1')
   currentLocation.innerHTML =
@@ -63,7 +63,7 @@ const deaths = () => {
   document.querySelector('#death').innerText = death
   xMovement = 1
   yMovement = 1
-  playLevel1()
+  startGame(playerLevel)
 }
 const isDead = (count) => {
   if (currentLocation.childElementCount === count) {
@@ -91,14 +91,74 @@ const playLevel1 = () => {
       car.Cars[i] = theCar
     }
     if (isDead(2)) {
-      deaths()
       clearInterval(carM)
+      clear()
     }
   }, 1500)
 }
 
-const playLevel2 = () => {}
-const playLevel3 = () => {}
+const playLevel2 = () => {
+  for (let i = 2; i < 7; i++) {
+    let img = document.createElement('img')
+    img.src = generateRandomCars()
+    let rL = i % 2 == 0 ? 8 : 1
+    let theCar = game.querySelector(`#r${i}C${rL} `).appendChild(img)
+    car.Cars.push(theCar)
+  }
+
+  carM = setInterval(() => {
+    for (let i = 0; i < car.Cars.length; i++) {
+      let indx = car.Cars[i].parentNode.id[1]
+      let indx2 = car.Cars[i].parentNode.id[3]
+      if (i % 2 == 0) {
+        if (indx2 == 8) indx2 = 1
+        indx2++
+      } else {
+        if (indx2 == 1) indx2 = 8
+        indx2--
+      }
+      let img = car.Cars[i]
+      car.Cars[i].remove()
+      let theCar = game.querySelector(`#r${indx}C${indx2} `).appendChild(img)
+      car.Cars[i] = theCar
+    }
+    if (isDead(2)) {
+      clearInterval(carM)
+      clear()
+    }
+  }, 1500)
+}
+const playLevel3 = () => {
+  for (let i = 2; i < 7; i++) {
+    let img = document.createElement('img')
+    img.src = generateRandomCars()
+    let rL = i % 2 == 0 ? 8 : 1
+    let theCar = game.querySelector(`#r${i}C${rL} `).appendChild(img)
+    car.Cars.push(theCar)
+  }
+
+  carM = setInterval(() => {
+    for (let i = 0; i < car.Cars.length; i++) {
+      let indx = car.Cars[i].parentNode.id[1]
+      let indx2 = car.Cars[i].parentNode.id[3]
+      if (i % 2 == 0) {
+        if (indx2 == 8) indx2 = 1
+        indx2++
+      } else {
+        if (indx2 == 1) indx2 = 8
+        indx2--
+      }
+      let img = car.Cars[i]
+      car.Cars[i].remove()
+      let theCar = game.querySelector(`#r${indx}C${indx2} `).appendChild(img)
+      car.Cars[i] = theCar
+    }
+    if (isDead(2)) {
+      clearInterval(carM)
+      clear()
+    }
+  }, 1500)
+}
 //dark  mode
 const duckMovement = (direction) => {
   let up = direction === arrowUp || direction === 'w' || direction === 'W'
@@ -135,7 +195,7 @@ const duckMovement = (direction) => {
   }
   if (isDead(1)) {
     clearInterval(carM)
-    deaths()
+    clear()
   }
   currentLocation.innerHTML =
     '<img id = "duck" src="./materials/images/Duck.png" alt="Duck" />'
@@ -157,6 +217,12 @@ const dark = () => {
     duck.style.boxShadow = 'none'
   }
 }
+
+const startGame = (selectedLevel) => {
+  if (selectedLevel === 1) playLevel1()
+  else if (selectedLevel === 2) playLevel2()
+  else playLevel3()
+}
 //this function will track the movement of the duck by the keyvored
 /* eventLisnter */
 
@@ -169,8 +235,14 @@ button.addEventListener('click', () => {
 }) //event listner to handle dark mode
 
 level1.addEventListener('click', () => {
-  if (isPlayed) {
-    playLevel1()
-    isPlayed = false
-  }
+  playerLevel = 1
+  clear()
+})
+level2.addEventListener('click', () => {
+  playerLevel = 2
+  clear()
+})
+level3.addEventListener('click', () => {
+  playerLevel = 3
+  clear()
 })
