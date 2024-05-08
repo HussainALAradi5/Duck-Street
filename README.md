@@ -36,9 +36,9 @@
 
 ##### image header 2
 
-## ![videos:](./materials/images/Gameplay/01.mp4)
+## ![videos:](./materials/images/Gameplay/01.gif)
 
-## ![videos:](./materials/images/Gameplay/02.mp4)
+## ![videos:](./materials/images/Gameplay/02.gif)
 
 ### **_Future Updates_**
 
