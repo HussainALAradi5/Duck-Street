@@ -46,10 +46,11 @@
 
 ### **_Future Updates_**
 
-- [ ] add random cars color
+- [x] add random cars color
 - [ ] Future Update 2
 - [x] duck movement
 - [x] winning score
+- [x] death score
 
 ---
 
