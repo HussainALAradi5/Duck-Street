@@ -52,28 +52,12 @@ const winnerScope = (isWin) => {
   winningScore.innerHTML = `${winner}`
   return true
 }
-const dark = () => {
-  if (black) {
-    body.style.backgroundColor = 'black'
-    black = false
-    ul.style.color = 'whiteSmoke'
-    button.style.backgroundColor = 'white'
-    button.style.color = 'black'
-    duck.style.boxShadow = '0 0 50px yellow'
-  } else {
-    body.style.backgroundColor = 'white'
-    black = true
-    ul.style.color = 'black'
-    button.style.backgroundColor = 'black'
-    button.style.color = 'white'
-    duck.style.boxShadow = 'none'
-  }
-}
+
 const deaths = () => {
   currentLocation.innerHTML = ''
   currentLocation = game.querySelector('#r1C1')
   currentLocation.innerHTML =
-    '<img src="./materials/images/Duck.png" alt="Duck" />'
+    '<img id="duck" src="./materials/images/Duck.png" alt="Duck" />'
   car.Cars.forEach((a) => a.remove())
   car.Cars = []
   document.querySelector('#death').innerText = death
@@ -154,8 +138,26 @@ const duckMovement = (direction) => {
     deaths()
   }
   currentLocation.innerHTML =
-    '<img src="./materials/images/Duck.png" alt="Duck" />'
-} //this function will track the movement of the duck by the keyvored
+    '<img id = "duck" src="./materials/images/Duck.png" alt="Duck" />'
+}
+const dark = () => {
+  if (black) {
+    body.style.backgroundColor = 'black'
+    black = false
+    ul.style.color = 'whiteSmoke'
+    button.style.backgroundColor = 'white'
+    button.style.color = 'black'
+    duck.style.boxShadow = '0 0 50px yellow'
+  } else {
+    body.style.backgroundColor = 'white'
+    black = true
+    ul.style.color = 'black'
+    button.style.backgroundColor = 'black'
+    button.style.color = 'white'
+    duck.style.boxShadow = 'none'
+  }
+}
+//this function will track the movement of the duck by the keyvored
 /* eventLisnter */
 
 document.addEventListener('keydown', (direction) => {
