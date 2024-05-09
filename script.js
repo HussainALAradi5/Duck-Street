@@ -217,7 +217,7 @@ const dark = () => {
     button.style.color = 'white'
     duck.style.boxShadow = 'none'
     body.style.backgroundImage =
-      "url('../images/cartoon-funny-mother-duck-baby-duck-floats-water-illustration-65334243.png')"
+      "url('./images/cartoon-funny-mother-duck-baby-duck-floats-water-illustration-65334243.png')"
   }
 }
 
