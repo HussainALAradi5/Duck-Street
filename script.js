@@ -203,7 +203,7 @@ const duckMovement = (direction) => {
 }
 const dark = () => {
   if (black) {
-    body.style.backgroundColor = 'black'
+    body.style.background = 'black'
     black = false
     ul.style.color = 'whiteSmoke'
     button.style.backgroundColor = 'white'
