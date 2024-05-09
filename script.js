@@ -15,7 +15,6 @@ const button = body.querySelector('#darkMode')
 const ul = body.querySelector('ul')
 const secondHTML = game.querySelector('#secondHTML')
 
-console.log(secondHTML)
 let currentLocation = firstRow.querySelector('#r1C1')
 const arrowUp = 'ArrowUp'
 const arrowDown = 'ArrowDown'
@@ -133,7 +132,7 @@ const playLevel2 = () => {
       clear()
     }
   }, 1500)
-}
+} //generate level#2 diffucalty
 const playLevel3 = () => {
   for (let i = 2; i < 7; i++) {
     let img = document.createElement('img')
@@ -164,7 +163,7 @@ const playLevel3 = () => {
       clear()
     }
   }, 1250)
-}
+} //generate level#3 diffuicalty
 //dark  mode
 const duckMovement = (direction) => {
   let up = direction === arrowUp || direction === 'w' || direction === 'W'
