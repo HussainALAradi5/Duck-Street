@@ -116,7 +116,7 @@ const playLevel2 = () => {
     for (let i = 0; i < car.Cars.length; i++) {
       let indx = car.Cars[i].parentNode.id[1]
       let indx2 = car.Cars[i].parentNode.id[3]
-      if (i % 2 == 0) {
+      if (i % 2 == 1) {
         if (indx2 == 8) indx2 = 1
         indx2++
       } else {
@@ -147,7 +147,7 @@ const playLevel3 = () => {
     for (let i = 0; i < car.Cars.length; i++) {
       let indx = car.Cars[i].parentNode.id[1]
       let indx2 = car.Cars[i].parentNode.id[3]
-      if (i % 2 == 0) {
+      if (i % 2 == 1) {
         if (indx2 == 8) indx2 = 1
         indx2++
       } else {
